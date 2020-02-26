@@ -1,9 +1,9 @@
 //Filename: ListPrinters.cpp 
-//Author: EENG 221 S18
+//Author: EENG 221 S20
 //Email: jjgiesey@milligan.edu
-//Assignment: Project Milestone #06
+//Assignment: Project Milestone #07
 //Description: Program to collect listPrinter functions.
-//Last Changed: February 23, 2018
+//Last Changed: February 26, 2020
 
 
 #include <iostream>
@@ -39,6 +39,19 @@ void listPrint(string SArray[], double DArray1[], double DArray2[], double DArra
 void listPrint(double dayArray[], bool bArray1[], int ArraySizeDay);
 // Give preconditions and postconditions.
 //One more function?
+
+void listPring(string names[], int values[], int numberVals);
+//Precondition: A list of strings to be printed and an integer value associated with each string
+//is given along with the number of strings.
+//Postcondition: The strings followed by the value in parentheses are printed on separate lines
+//preceded by an index staring with one.
+
+void listPrint(string names[], int numberVals);
+//Precondition: A list of strings to be printed is given along with the number of strings.
+//Postcondition: The strings are printed on separate lines preceded by an index staring with one.
+
+
+
 
 const int sizeArray = 10;
 const double pi = atan(1) * 4;
@@ -95,7 +108,9 @@ int main()
 	listPrint(sArray2, iArray4, iArray2, sizeArray);
 	cout << endl;
 	listPrint(sArray1, dArray5, iArray2, sizeArray);
-
+	cout << endl;
+	listPrint(sArray1, sizeArray);
+	cout << endl;
 	for (int i = 0; i < sizeArray; i++)
 	{
 		//Calculate the distance between two points in three-dimensional Cartesion space.
@@ -169,5 +184,24 @@ void listPrint(string SArray[], double DArray1[], double DArray2[], double DArra
 		cout << SArray[i] << " \t" << DArray1[i] << " \t" << DArray2[i] << " \t" << DArray3[i] << endl;
 	}
 
+	return;
+}
+
+//Function Definitions
+void listPrint(string names[], int values[], int numberVals)
+{
+	for (int i = 0; i < numberVals; i++)
+	{
+		cout << i + 1 << ": " << names[i] << " (" << values[i] << ")" << endl;
+	}
+	return;
+}
+
+void listPrint(string names[], int numberVals)
+{
+	for (int i = 0; i < numberVals; i++)
+	{
+		cout << i + 1 << ": " << names[i] << endl;
+	}
 	return;
 }
