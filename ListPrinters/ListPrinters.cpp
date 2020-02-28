@@ -53,6 +53,23 @@ void listPrint(string names[], int numberVals);
 
 
 
+
+
+
+//Alayna function declaration
+
+void listPrint(int numberi, int Arrayi[]);
+// Precondition: user enters the amout of days missed, and the dates
+// Postcondition: outputs a list with the dates that user is missing 
+void listPrint(double numberj, string Arrayj[]);
+// Precondition: user enters how many periods they will have in a day and the student leaders for each period 
+//Postcondition: outputs for which class period who is the leader
+
+//alayna Varables 
+int Arrayi[10], numberi;
+double numberj;
+string Arrayj[10];
+
 const int sizeArray = 10;
 const double pi = atan(1) * 4;
 
@@ -130,6 +147,29 @@ int main()
 	listPrint(dayArray, bArray, 30);
 
 	cin >> option;
+
+
+
+	//Alayna function call
+
+	cout << "Enter how many days you need a subsitute for...";
+	cin >> numberi;
+	cout << "Enter the dates of the day or days your going to miss\n...";
+	for (int i = 0; i < numberi; i++)
+	{
+		cin >> Arrayi[i];
+	}
+	listPrint(numberi, Arrayi);
+	cout << "Enter how many periods there will be...";
+	double numberj;
+	cin >> numberj;
+	for (int j = 0; j < numberj; j++)
+	{
+		cout << "Enter the student leader for period " << j + 1 << "...";
+		cin >> Arrayj[j];
+	}
+	listPrint(numberj, Arrayj);
+
 	return 0;
 }
 
@@ -204,4 +244,21 @@ void listPrint(string names[], int numberVals)
 		cout << i + 1 << ": " << names[i] << endl;
 	}
 	return;
+}
+
+
+//Alayna function definition 
+void listPrint(int numberi, int Arrayi[])
+{
+	for (int i = 0; i < numberi; i++)
+	{
+		cout << "The " << i + 1 << "day you will miss is the " << Arrayi[i] << endl;
+	}
+}
+void listPrint(double numberj, string Arrayj[])
+{
+	for (int i = 0; i < numberj; i++)
+	{
+		cout << "the student leader of period " << i + 1 << " is " << Arrayj[i] << endl;
+	}
 }
