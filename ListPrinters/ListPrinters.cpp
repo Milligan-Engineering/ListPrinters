@@ -88,10 +88,8 @@ int main()
 	
 	//erins variables
 	const int MAXLOADS = 5;
-	const double conv = 1000.0;
 	double load = 0, defVoltage = 12.0;
 	int NumberOfLoads = 5;
-	string Device;
 	string LoadNames[MAXLOADS];
 	double LoadCurrent[MAXLOADS] = { 50.0,60.0,30.0,70.0,10.0 };
 	double LoadPower[MAXLOADS] = { 120.0,240.0,150.0,300.0,100.0 };
