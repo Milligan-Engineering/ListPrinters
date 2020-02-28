@@ -39,9 +39,11 @@ void listPrint(string SArray[], double DArray1[], double DArray2[], double DArra
 void listPrint(double dayArray[], bool bArray1[], int ArraySizeDay);
 // Give preconditions and postconditions.
 //One more function?
+
+//Brandon's listPrint
 void listPrint(bool bArray[], string sArray[], int arraySize);
 //Precondition: An equal sized boolean array and string arrays are passed as well the array size in arraySize
-//Postcondition: The boolean value of each string will be passed with the string
+//Postcondition: The boolean value of the string will be printed with the string
 void listPrint(string sArray[], int iArray[], double dArray[], int arraySize);
 //Precondition: Equal sized int array for identifer, double array for value, and string array for name are passed into the function with the size of the array pass in arraySize 
 //Postcondition: Outputs the name, identifer and value
@@ -80,6 +82,9 @@ int main()
 	bool bArray[30] = { true, false,true,false, true,false,true,false, true,false,  true, false,true,false, true,false,true,false, true,false,  true, false,true,false, true,false,true,false, true,false };
 
 	char option;
+	cout << "Brandon's:\n";
+	listPrint(bArray1, sArray1, 10);
+	listPrint(sArray1, iArray1, dArray1, 10);
 
 	//Use two digits for double output
 	cout.setf(ios::fixed);
@@ -121,9 +126,7 @@ int main()
 	listPrint(dayArray, bArray, 30);
 
 	cin >> option;
-	cout << "Brandon's:\n";
-	listPrint(bArray1, sArray1, 10);
-	listPrint(sArray1, iArray1, dArray1, 10);
+
 	return 0;
 }
 
@@ -180,6 +183,7 @@ void listPrint(string SArray[], double DArray1[], double DArray2[], double DArra
 
 	return;
 }
+//Brandon's Function definition
 void listPrint(bool bArray[], string sArray[], int arraySize)
 {
 	for (int i = 0; i < arraySize; i++)
@@ -192,7 +196,7 @@ void listPrint(string sArray[], int iArray[], double dArray[], int arraySize)
 {
 	for (int i = 0; i < arraySize; i++)
 	{
-		cout << sArray[i] << " identifier:" << iArray[i] << ", value:" << dArray[i];
+		cout << "identifier:" << iArray[i] << " Name: " << sArray[i] << " value:" << dArray[i]<<endl;
 	}
 	return;
 }
