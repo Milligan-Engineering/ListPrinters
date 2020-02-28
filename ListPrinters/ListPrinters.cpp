@@ -50,6 +50,10 @@ void listPrint(string names[], int numberVals);
 //Precondition: A list of strings to be printed is given along with the number of strings.
 //Postcondition: The strings are printed on separate lines preceded by an index staring with one.
 
+void listPrint(string LoadNames[], double LoadPower[], int NumberOfLoads);
+void listPrint(string LoadNames[], double LoadCurrent[], double load, double defVoltage, int NumberOfLoads);
+
+
 
 
 
@@ -81,6 +85,16 @@ int main()
 	double bbmaxZ[sizeArray] = { 0,0,0,0,0,0,0.2,0.2,0.1,0.1 };
 	double cylinderHeight[sizeArray], hitboxVolume[sizeArray];
 	double radiusArray[sizeArray] = { 4.2,4.2,4.2,4.2,4.2,4.2,4.3,4.2,4.2,4.2 };
+	
+	//erins variables
+	const int MAXLOADS = 5;
+	const double conv = 1000.0;
+	double load = 0, defVoltage = 12.0;
+	int NumberOfLoads = 5;
+	string Device;
+	string LoadNames[MAXLOADS];
+	double LoadCurrent[MAXLOADS] = { 50.0,60.0,30.0,70.0,10.0 };
+	double LoadPower[MAXLOADS] = { 120.0,240.0,150.0,300.0,100.0 };
 
 	// for Johns listPrint
 	double dayArray[30] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
@@ -128,6 +142,10 @@ int main()
 	cin >> option;
 
 	listPrint(dayArray, bArray, 30);
+
+	//for erins list print 
+	listPrint(LoadNames, LoadPower, NumberOfLoads);
+	listPrint(LoadNames, LoadCurrent, load, defVoltage, NumberOfLoads);
 
 	cin >> option;
 	return 0;
@@ -202,6 +220,25 @@ void listPrint(string names[], int numberVals)
 	for (int i = 0; i < numberVals; i++)
 	{
 		cout << i + 1 << ": " << names[i] << endl;
+	}
+	return;
+}
+
+void listPrint(string LoadNames[], double LoadPower[], int NumberOfLoads)
+{
+	for (int i = 0; i < NumberOfLoads; i++)
+	{
+		cout << LoadNames[i] << " requires " << LoadPower[i] << " Watts\n";
+	}
+	return;
+}
+
+void listPrint(string LoadNames[], double LoadCurrent[], double load, double defVoltage, int NumberOfLoads)
+{
+	for (int i = 0; i < NumberOfLoads; i++)
+	{
+		load = LoadCurrent[i] * defVoltage;
+		cout << LoadNames[i] << " requires " << load << " Watts\n";
 	}
 	return;
 }
