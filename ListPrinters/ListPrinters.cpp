@@ -75,7 +75,7 @@ const double pi = atan(1) * 4;
 
 int main()
 {
-	int iArray1[sizeArray] = { 0,1,2,3,4,5,6,7,8,9 };
+	int iArray1[sizeArray] = { 1,2,3,4,5,6,7,8,9, 0};
 	int iArray2[sizeArray] = { 9,8,7,6,5,4,3,2,1,0 };
 	int iArray3[sizeArray] = { 9,8,5,6,5,4,3,9,1,0 };
 	int iArray4[sizeArray], iArray5[sizeArray];
@@ -238,9 +238,10 @@ void listPrint(string names[], int numberVals)
 ///Alayna function definition 
 void listPrint(int numberi, int Arrayi[])
 {
+	string Ordinal[10] = { "st", "nd", "rd", "th","th","th", "th", "th","th", "th" };
 	for (int i = 0; i < numberi; i++)
 	{
-		cout << "The " << i + 1 << " day you will miss is the " << Arrayi[i] << endl;
+		cout << "The " << i + 1 << Ordinal[i] << " day you will miss is the " << Arrayi[i] << Ordinal[Arrayi[i]-1] << endl;
 	}
 }
 void listPrint(double numberj, string Arrayj[])
