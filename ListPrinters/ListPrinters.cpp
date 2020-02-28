@@ -59,16 +59,15 @@ void listPrint(string names[], int numberVals);
 //Alayna function declaration
 
 void listPrint(int numberi, int Arrayi[]);
-// Precondition: user enters the amout of days missed, and the dates
+// Precondition: user enters the length of the array and the array passes the dates of the month they are missing
 // Postcondition: outputs a list with the dates that user is missing 
 void listPrint(double numberj, string Arrayj[]);
-// Precondition: user enters how many periods they will have in a day and the student leaders for each period 
+// Precondition: user enters the length of the array and the array passes the name of the student leader
 //Postcondition: outputs for which class period who is the leader
 
 //alayna Varables 
-int Arrayi[10], numberi;
+int numberi;
 double numberj;
-string Arrayj[10];
 
 const int sizeArray = 10;
 const double pi = atan(1) * 4;
@@ -150,25 +149,14 @@ int main()
 
 
 
-	//Alayna function call
+	///Alayna function call
 
 	cout << "Enter how many days you need a subsitute for...";
 	cin >> numberi;
-	cout << "Enter the dates of the day or days your going to miss\n...";
-	for (int i = 0; i < numberi; i++)
-	{
-		cin >> Arrayi[i];
-	}
-	listPrint(numberi, Arrayi);
+	listPrint(numberi, iArray1);
 	cout << "Enter how many periods there will be...";
-	double numberj;
 	cin >> numberj;
-	for (int j = 0; j < numberj; j++)
-	{
-		cout << "Enter the student leader for period " << j + 1 << "...";
-		cin >> Arrayj[j];
-	}
-	listPrint(numberj, Arrayj);
+	listPrint(numberj, sArray1);
 
 	return 0;
 }
@@ -247,12 +235,12 @@ void listPrint(string names[], int numberVals)
 }
 
 
-//Alayna function definition 
+///Alayna function definition 
 void listPrint(int numberi, int Arrayi[])
 {
 	for (int i = 0; i < numberi; i++)
 	{
-		cout << "The " << i + 1 << "day you will miss is the " << Arrayi[i] << endl;
+		cout << "The " << i + 1 << " day you will miss is the " << Arrayi[i] << endl;
 	}
 }
 void listPrint(double numberj, string Arrayj[])
