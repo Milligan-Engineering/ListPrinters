@@ -40,7 +40,7 @@ void listPrint(double dayArray[], bool bArray1[], int ArraySizeDay);
 // Give preconditions and postconditions.
 //One more function?
 
-void listPring(string names[], int values[], int numberVals);
+void listPrint(string names[], int values[], int numberVals);
 //Precondition: A list of strings to be printed and an integer value associated with each string
 //is given along with the number of strings.
 //Postcondition: The strings followed by the value in parentheses are printed on separate lines
@@ -50,9 +50,15 @@ void listPrint(string names[], int numberVals);
 //Precondition: A list of strings to be printed is given along with the number of strings.
 //Postcondition: The strings are printed on separate lines preceded by an index staring with one.
 
+//Tyler's void Functions
 
+void listPrint(string name[], double number[], int Arraysize);
+//Precondition: Predetermined arrays will be pulled
+//Postcondition: Strings and intergers will be printed
 
-
+void listPrint(string name[], int number[], string word[], int Arraysize);
+//Precondition: It will use the Predetermined functions that will be called for the functions above
+//Postcondition: data in the called arrays will be printed
 
 
 
@@ -75,7 +81,7 @@ const double pi = atan(1) * 4;
 
 int main()
 {
-	int iArray1[sizeArray] = { 1,2,3,4,5,6,7,8,9, 0};
+	int iArray1[sizeArray] = { 1,2,3,4,5,6,7,8,9,10};
 	int iArray2[sizeArray] = { 9,8,7,6,5,4,3,2,1,0 };
 	int iArray3[sizeArray] = { 9,8,5,6,5,4,3,9,1,0 };
 	int iArray4[sizeArray], iArray5[sizeArray];
@@ -157,6 +163,12 @@ int main()
 	cout << "Enter how many periods there will be...";
 	cin >> numberj;
 	listPrint(numberj, sArray1);
+
+	//Tyler's Call
+	cout << endl;
+	listPrint(sArray2, dArray1, sizeArray);
+	cout << endl;
+	listPrint(sArray2, iArray1, sArray1, sizeArray);
 
 	return 0;
 }
@@ -249,5 +261,23 @@ void listPrint(double numberj, string Arrayj[])
 	for (int i = 0; i < numberj; i++)
 	{
 		cout << "the student leader of period " << i + 1 << " is " << Arrayj[i] << endl;
+	}
+}
+
+//Tyler's Function definitions
+void listPrint(string name[], double number[], int Arraysize)
+{
+	for (int i = 0; i < Arraysize; i++)
+	{
+		cout << name[i] << "'s favorite number is " << number[i] << ". \n";
+	}
+}
+
+void listPrint(string name[], int number[], string word[], int Arraysize)
+{
+	for (int i = 0; i < Arraysize; i++)
+	{
+		cout << name[i] << " will write the word " << word[i] << "in front of the class after "<< number[i] << 
+			" have gone.\n";
 	}
 }
