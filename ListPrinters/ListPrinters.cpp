@@ -11,6 +11,7 @@
 #include <stdlib.h> //Need to include library for function rand, srand
 #include <time.h>  //Need to include library for function time
 #include <cmath> //Need to include library for function atan
+#include <iomanip> //used to organize data in columns for erin
 
 using namespace std;
 
@@ -51,7 +52,11 @@ void listPrint(string names[], int numberVals);
 //Postcondition: The strings are printed on separate lines preceded by an index staring with one.
 
 void listPrint(string LoadNames[], double LoadPower[], int NumberOfLoads);
+//Precondition: Two list of strings are given as well as the number of strings
+//Postcondition: The strings will be printed alongside each other in columns 
 void listPrint(string LoadNames[], double LoadCurrent[], double load, double defVoltage, int NumberOfLoads);
+//Precondition: Two strings, name and current, are given along with a load variable, an integer value, and number of strings
+//Postcondition: The first string is printed in one column and the second string, each multiplied by the integer value is printed in a second column
 
 
 
@@ -141,9 +146,10 @@ int main()
 
 	listPrint(dayArray, bArray, 30);
 
-	//for erins list print 
-	listPrint(LoadNames, LoadPower, NumberOfLoads);
-	listPrint(LoadNames, LoadCurrent, load, defVoltage, NumberOfLoads);
+	//call for erins list print
+	cout << "\n";
+	listPrint(sArray1, LoadPower, NumberOfLoads);
+	listPrint(sArray2, LoadCurrent, load, defVoltage, NumberOfLoads);
 
 	cin >> option;
 	return 0;
@@ -222,21 +228,30 @@ void listPrint(string names[], int numberVals)
 	return;
 }
 
+//definition for erins list print
 void listPrint(string LoadNames[], double LoadPower[], int NumberOfLoads)
 {
+	std::cout << std::left << std::setw(12) << "Names";
+	std::cout << std::right << std::setw(6) << "Load" << "\n";
 	for (int i = 0; i < NumberOfLoads; i++)
 	{
-		cout << LoadNames[i] << " requires " << LoadPower[i] << " Watts\n";
+		std::cout << std::left << std::setw(12) << LoadNames[i];
+		std::cout << std::right << std::setw(6) << LoadPower[i] << "\n";
 	}
+	cout << "\n";
 	return;
 }
 
 void listPrint(string LoadNames[], double LoadCurrent[], double load, double defVoltage, int NumberOfLoads)
 {
+	std::cout << std::left << std::setw(12) << "Names";
+	std::cout << std::right << std::setw(6) << "Load" << "\n";
 	for (int i = 0; i < NumberOfLoads; i++)
 	{
 		load = LoadCurrent[i] * defVoltage;
-		cout << LoadNames[i] << " requires " << load << " Watts\n";
+		std::cout << std::left << std::setw(12) << LoadNames[i];
+		std::cout << std::right << std::setw(6) << load << "\n";
 	}
+	cout << "\n";
 	return;
 }
