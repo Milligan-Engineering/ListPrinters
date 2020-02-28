@@ -1,9 +1,9 @@
 //Filename: ListPrinters.cpp 
-//Author: EENG 221 S18
+//Author: EENG 221 S20
 //Email: jjgiesey@milligan.edu
-//Assignment: Project Milestone #06
+//Assignment: Project Milestone #07
 //Description: Program to collect listPrinter functions.
-//Last Changed: February 23, 2018
+//Last Changed: February 26, 2020
 
 
 #include <iostream>
@@ -40,13 +40,18 @@ void listPrint(double dayArray[], bool bArray1[], int ArraySizeDay);
 // Give preconditions and postconditions.
 //One more function?
 
-//Brandon's listPrint
-void listPrint(bool bArray[], string sArray[], int arraySize);
-//Precondition: An equal sized boolean array and string arrays are passed as well the array size in arraySize
-//Postcondition: The boolean value of the string will be printed with the string
-void listPrint(string sArray[], int iArray[], double dArray[], int arraySize);
-//Precondition: Equal sized int array for identifer, double array for value, and string array for name are passed into the function with the size of the array pass in arraySize 
-//Postcondition: Outputs the name, identifer and value
+void listPring(string names[], int values[], int numberVals);
+//Precondition: A list of strings to be printed and an integer value associated with each string
+//is given along with the number of strings.
+//Postcondition: The strings followed by the value in parentheses are printed on separate lines
+//preceded by an index staring with one.
+
+void listPrint(string names[], int numberVals);
+//Precondition: A list of strings to be printed is given along with the number of strings.
+//Postcondition: The strings are printed on separate lines preceded by an index staring with one.
+
+
+
 
 const int sizeArray = 10;
 const double pi = atan(1) * 4;
@@ -82,9 +87,6 @@ int main()
 	bool bArray[30] = { true, false,true,false, true,false,true,false, true,false,  true, false,true,false, true,false,true,false, true,false,  true, false,true,false, true,false,true,false, true,false };
 
 	char option;
-	cout << "Brandon's:\n";
-	listPrint(bArray1, sArray1, 10);
-	listPrint(sArray1, iArray1, dArray1, 10);
 
 	//Use two digits for double output
 	cout.setf(ios::fixed);
@@ -106,7 +108,9 @@ int main()
 	listPrint(sArray2, iArray4, iArray2, sizeArray);
 	cout << endl;
 	listPrint(sArray1, dArray5, iArray2, sizeArray);
-
+	cout << endl;
+	listPrint(sArray1, sizeArray);
+	cout << endl;
 	for (int i = 0; i < sizeArray; i++)
 	{
 		//Calculate the distance between two points in three-dimensional Cartesion space.
@@ -126,7 +130,6 @@ int main()
 	listPrint(dayArray, bArray, 30);
 
 	cin >> option;
-
 	return 0;
 }
 
@@ -183,20 +186,22 @@ void listPrint(string SArray[], double DArray1[], double DArray2[], double DArra
 
 	return;
 }
-//Brandon's Function definition
-void listPrint(bool bArray[], string sArray[], int arraySize)
+
+//Function Definitions
+void listPrint(string names[], int values[], int numberVals)
 {
-	for (int i = 0; i < arraySize; i++)
+	for (int i = 0; i < numberVals; i++)
 	{
-		cout << "The status of " << sArray[i] << " is " << bArray[i] << endl;
+		cout << i + 1 << ": " << names[i] << " (" << values[i] << ")" << endl;
 	}
 	return;
 }
-void listPrint(string sArray[], int iArray[], double dArray[], int arraySize)
+
+void listPrint(string names[], int numberVals)
 {
-	for (int i = 0; i < arraySize; i++)
+	for (int i = 0; i < numberVals; i++)
 	{
-		cout << "identifier:" << iArray[i] << " Name: " << sArray[i] << " value:" << dArray[i]<<endl;
+		cout << i + 1 << ": " << names[i] << endl;
 	}
 	return;
 }
