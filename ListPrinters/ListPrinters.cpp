@@ -121,6 +121,9 @@ int main()
 	listPrint(dayArray, bArray, 30);
 
 	cin >> option;
+	cout << "Brandon's:\n";
+	listPrint(bArray1, sArray1, 10);
+	listPrint(sArray1, iArray1, dArray1, 10);
 	return 0;
 }
 
@@ -177,7 +180,7 @@ void listPrint(string SArray[], double DArray1[], double DArray2[], double DArra
 
 	return;
 }
-void listPrint(bool bArray, string sArray, int arraySize)
+void listPrint(bool bArray[], string sArray[], int arraySize)
 {
 	for (int i = 0; i < arraySize; i++)
 	{
