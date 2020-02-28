@@ -39,6 +39,12 @@ void listPrint(string SArray[], double DArray1[], double DArray2[], double DArra
 void listPrint(double dayArray[], bool bArray1[], int ArraySizeDay);
 // Give preconditions and postconditions.
 //One more function?
+void listPrint(bool bArray[], string sArray[], int arraySize);
+//Precondition: An equal sized boolean array and string arrays are passed as well the array size in arraySize
+//Postcondition: The boolean value of each string will be passed with the string
+void listPrint(string sArray[], int iArray[], double dArray[], int arraySize);
+//Precondition: Equal sized int array for identifer, double array for value, and string array for name are passed into the function with the size of the array pass in arraySize 
+//Postcondition: Outputs the name, identifer and value
 
 const int sizeArray = 10;
 const double pi = atan(1) * 4;
@@ -169,5 +175,21 @@ void listPrint(string SArray[], double DArray1[], double DArray2[], double DArra
 		cout << SArray[i] << " \t" << DArray1[i] << " \t" << DArray2[i] << " \t" << DArray3[i] << endl;
 	}
 
+	return;
+}
+void listPrint(bool bArray, string sArray, int arraySize)
+{
+	for (int i = 0; i < arraySize; i++)
+	{
+		cout << "The status of " << sArray[i] << " is " << bArray[i] << endl;
+	}
+	return;
+}
+void listPrint(string sArray[], int iArray[], double dArray[], int arraySize)
+{
+	for (int i = 0; i < arraySize; i++)
+	{
+		cout << sArray[i] << " identifier:" << iArray[i] << ", value:" << dArray[i];
+	}
 	return;
 }
