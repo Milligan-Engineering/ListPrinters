@@ -39,7 +39,7 @@ void listPrint(string SArray[], double DArray1[], double DArray2[], double DArra
 void listPrint(double dayArray[], bool bArray1[], int ArraySizeDay);
 // Give preconditions and postconditions.
 //One more function?
-
+//Trying to fix merging
 //Brandon's listPrint
 void listPrint(bool bArray[], string sArray[], int arraySize);
 //Precondition: An equal sized boolean array and string arrays are passed as well the array size in arraySize
