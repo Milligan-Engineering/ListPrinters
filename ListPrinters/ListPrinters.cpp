@@ -57,6 +57,7 @@ void listPrint(string LoadNames[], double LoadPower[], int NumberOfLoads);
 void listPrint(string LoadNames[], double LoadCurrent[], double load, double defVoltage, int NumberOfLoads);
 //Precondition: Two strings, name and current, are given along with a load variable, an integer value, and number of strings
 //Postcondition: The first string is printed in one column and the second string, each multiplied by the integer value is printed in a second column
+
 //Tyler's void Functions
 
 void listPrint(string name[], double number[], int Arraysize);
