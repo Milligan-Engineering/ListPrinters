@@ -11,6 +11,7 @@
 #include <stdlib.h> //Need to include library for function rand, srand
 #include <time.h>  //Need to include library for function time
 #include <cmath> //Need to include library for function atan
+#include <iomanip> //used to organize data in columns for erin
 
 using namespace std;
 
@@ -50,6 +51,12 @@ void listPrint(string names[], int numberVals);
 //Precondition: A list of strings to be printed is given along with the number of strings.
 //Postcondition: The strings are printed on separate lines preceded by an index staring with one.
 
+void listPrint(string LoadNames[], double LoadPower[], int NumberOfLoads);
+//Precondition: Two list of strings are given as well as the number of strings
+//Postcondition: The strings will be printed alongside each other in columns 
+void listPrint(string LoadNames[], double LoadCurrent[], double load, double defVoltage, int NumberOfLoads);
+//Precondition: Two strings, name and current, are given along with a load variable, an integer value, and number of strings
+//Postcondition: The first string is printed in one column and the second string, each multiplied by the integer value is printed in a second column
 
 
 
@@ -75,7 +82,7 @@ const double pi = atan(1) * 4;
 
 int main()
 {
-	int iArray1[sizeArray] = { 1,2,3,4,5,6,7,8,9, 0};
+	int iArray1[sizeArray] = { 1,2,3,4,5,6,7,8,9,0};
 	int iArray2[sizeArray] = { 9,8,7,6,5,4,3,2,1,0 };
 	int iArray3[sizeArray] = { 9,8,5,6,5,4,3,9,1,0 };
 	int iArray4[sizeArray], iArray5[sizeArray];
@@ -97,6 +104,14 @@ int main()
 	double bbmaxZ[sizeArray] = { 0,0,0,0,0,0,0.2,0.2,0.1,0.1 };
 	double cylinderHeight[sizeArray], hitboxVolume[sizeArray];
 	double radiusArray[sizeArray] = { 4.2,4.2,4.2,4.2,4.2,4.2,4.3,4.2,4.2,4.2 };
+	
+	//erins variables
+	const int MAXLOADS = 5;
+	double load = 0, defVoltage = 12.0;
+	int NumberOfLoads = 5;
+	string LoadNames[MAXLOADS];
+	double LoadCurrent[MAXLOADS] = { 50.0,60.0,30.0,70.0,10.0 };
+	double LoadPower[MAXLOADS] = { 120.0,240.0,150.0,300.0,100.0 };
 
 	// for Johns listPrint
 	double dayArray[30] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
@@ -144,6 +159,11 @@ int main()
 	cin >> option;
 
 	listPrint(dayArray, bArray, 30);
+
+	//call for erins list print
+	cout << "\n";
+	listPrint(sArray1, LoadPower, NumberOfLoads);
+	listPrint(sArray2, LoadCurrent, load, defVoltage, NumberOfLoads);
 
 	cin >> option;
 
@@ -231,6 +251,34 @@ void listPrint(string names[], int numberVals)
 	{
 		cout << i + 1 << ": " << names[i] << endl;
 	}
+	return;
+}
+
+//definition for erins list print
+void listPrint(string LoadNames[], double LoadPower[], int NumberOfLoads)
+{
+	std::cout << std::left << std::setw(12) << "Names";
+	std::cout << std::right << std::setw(6) << "Load" << "\n";
+	for (int i = 0; i < NumberOfLoads; i++)
+	{
+		std::cout << std::left << std::setw(12) << LoadNames[i];
+		std::cout << std::right << std::setw(6) << LoadPower[i] << "\n";
+	}
+	cout << "\n";
+	return;
+}
+
+void listPrint(string LoadNames[], double LoadCurrent[], double load, double defVoltage, int NumberOfLoads)
+{
+	std::cout << std::left << std::setw(12) << "Names";
+	std::cout << std::right << std::setw(6) << "Load" << "\n";
+	for (int i = 0; i < NumberOfLoads; i++)
+	{
+		load = LoadCurrent[i] * defVoltage;
+		std::cout << std::left << std::setw(12) << LoadNames[i];
+		std::cout << std::right << std::setw(6) << load << "\n";
+	}
+	cout << "\n";
 	return;
 }
 
