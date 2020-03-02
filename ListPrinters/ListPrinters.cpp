@@ -53,12 +53,12 @@ void listPrint(string names[], int numberVals);
 //Tyler's void Functions
 
 void listPrint(string name[], double number[], int Arraysize);
-//Precondition: Predetermined arrays will be pulled
-//Postcondition: Strings and intergers will be printed
+//Precondition: There Needs to be an string array full of names and a double array of favorite numbers declared.
+//Postcondition: A sentence telling users what people's favorite numbers are.
 
 void listPrint(string name[], int number[], string word[], int Arraysize);
-//Precondition: It will use the Predetermined functions that will be called for the functions above
-//Postcondition: data in the called arrays will be printed
+//Precondition: A String array of names, interger array of numbers and a string array list of words need to be declared.
+//Postcondition: A sentence telling a person what word they will right after a number of people have gone.
 
 
 
