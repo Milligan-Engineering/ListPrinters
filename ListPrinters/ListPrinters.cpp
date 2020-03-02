@@ -75,6 +75,14 @@ void listPrint(double numberj, string Arrayj[]);
 //alayna Varables 
 int numberi;
 double numberj;
+//Trying to fix merging
+//Brandon's listPrint
+void listPrint(bool bArray[], string sArray[], int arraySize);
+//Precondition: An equal sized boolean array and string arrays are passed as well the array size in arraySize
+//Postcondition: The boolean value of the string will be printed with the string
+void listPrint(string sArray[], int iArray[], double dArray[], int arraySize);
+//Precondition: Equal sized int array for identifer, double array for value, and string array for name are passed into the function with the size of the array pass in arraySize 
+//Postcondition: Outputs the name, identifer and value
 
 const int sizeArray = 10;
 const double pi = atan(1) * 4;
