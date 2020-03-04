@@ -60,29 +60,13 @@ void listPrint(string LoadNames[], double LoadCurrent[], double load, double def
 
 
 
-
-
-
-//Alayna function declaration
-
-void listPrint(int numberi, int Arrayi[]);
-// Precondition: user enters the length of the array and the array passes the dates of the month they are missing
-// Postcondition: outputs a list with the dates that user is missing 
-void listPrint(double numberj, string Arrayj[]);
-// Precondition: user enters the length of the array and the array passes the name of the student leader
-//Postcondition: outputs for which class period who is the leader
-
-//alayna Varables 
-int numberi;
-double numberj;
-
 const int sizeArray = 10;
 const double pi = atan(1) * 4;
 
 
 int main()
 {
-	int iArray1[sizeArray] = { 1,2,3,4,5,6,7,8,9,0};
+	int iArray1[sizeArray] = { 1,2,3,4,5,6,7,8,9, 0};
 	int iArray2[sizeArray] = { 9,8,7,6,5,4,3,2,1,0 };
 	int iArray3[sizeArray] = { 9,8,5,6,5,4,3,9,1,0 };
 	int iArray4[sizeArray], iArray5[sizeArray];
