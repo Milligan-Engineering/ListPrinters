@@ -41,7 +41,7 @@ void listPrint(double dayArray[], bool bArray1[], int ArraySizeDay);
 // Give preconditions and postconditions.
 //One more function?
 
-void listPring(string names[], int values[], int numberVals);
+void listPrint(string names[], int values[], int numberVals);
 //Precondition: A list of strings to be printed and an integer value associated with each string
 //is given along with the number of strings.
 //Postcondition: The strings followed by the value in parentheses are printed on separate lines
@@ -58,7 +58,38 @@ void listPrint(string LoadNames[], double LoadCurrent[], double load, double def
 //Precondition: Two strings, name and current, are given along with a load variable, an integer value, and number of strings
 //Postcondition: The first string is printed in one column and the second string, each multiplied by the integer value is printed in a second column
 
+//Tyler's void Functions
 
+void listPrint(string name[], double number[], int Arraysize);
+//Precondition: There Needs to be an string array full of names and a double array of favorite numbers declared.
+//Postcondition: A sentence telling users what people's favorite numbers are.
+
+void listPrint(string name[], int number[], string word[], int Arraysize);
+//Precondition: A String array of names, interger array of numbers and a string array list of words need to be declared.
+//Postcondition: A sentence telling a person what word they will right after a number of people have gone.
+
+
+
+//Alayna function declaration
+
+void listPrint(int numberi, int Arrayi[]);
+// Precondition: user enters the length of the array and the array passes the dates of the month they are missing
+// Postcondition: outputs a list with the dates that user is missing 
+void listPrint(double numberj, string Arrayj[]);
+// Precondition: user enters the length of the array and the array passes the name of the student leader
+//Postcondition: outputs for which class period who is the leader
+
+//alayna Varables 
+int numberi;
+double numberj;
+//Trying to fix merging
+//Brandon's listPrint
+void listPrint(bool bArray[], string sArray[], int arraySize);
+//Precondition: An equal sized boolean array and string arrays are passed as well the array size in arraySize
+//Postcondition: The boolean value of the string will be printed with the string
+void listPrint(string sArray[], int iArray[], double dArray[], int arraySize);
+//Precondition: Equal sized int array for identifer, double array for value, and string array for name are passed into the function with the size of the array pass in arraySize 
+//Postcondition: Outputs the name, identifer and value
 
 const int sizeArray = 10;
 const double pi = atan(1) * 4;
@@ -161,6 +192,12 @@ int main()
 	cout << "Enter how many periods there will be...";
 	cin >> numberj;
 	listPrint(numberj, sArray1);
+
+	//Tyler's Call
+	cout << endl;
+	listPrint(sArray2, dArray1, sizeArray);
+	cout << endl;
+	listPrint(sArray2, iArray1, sArray1, sizeArray);
 
 	return 0;
 }
@@ -281,5 +318,23 @@ void listPrint(double numberj, string Arrayj[])
 	for (int i = 0; i < numberj; i++)
 	{
 		cout << "the student leader of period " << i + 1 << " is " << Arrayj[i] << endl;
+	}
+}
+
+//Tyler's Function definitions
+void listPrint(string name[], double number[], int Arraysize)
+{
+	for (int i = 0; i < Arraysize; i++)
+	{
+		cout << name[i] << "'s favorite number is " << number[i] << ". \n";
+	}
+}
+
+void listPrint(string name[], int number[], string word[], int Arraysize)
+{
+	for (int i = 0; i < Arraysize; i++)
+	{
+		cout << name[i] << " will write the word " << word[i] << "in front of the class after "<< number[i] << 
+			" have gone.\n";
 	}
 }
